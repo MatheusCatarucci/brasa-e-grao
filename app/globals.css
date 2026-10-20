@@ -1,3 +1,6 @@
+/* Fontes carregadas via next/font (self-hosted em build, sem requisição ao Google).
+   Origem: https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Isometra&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap
+   (o @import com URL remota é descartado pelo Turbopack, por isso o next/font) */
 @import "tailwindcss";
 
 /* Tokens usados pelas classes do Tailwind (bg-background, text-ember, font-display...) */
@@ -6,7 +9,8 @@
   --foreground: #1f1a17;
   --muted: #6b6259;
   --ember: #c2410c;
-  --fraunces: "Fraunces", Georgia, serif;
+  --fraunces: var(--font-fraunces), Georgia, serif;
+  --isometra: "Isometra", "Fraunces", Georgia, serif;
 }
 
 @theme inline {
@@ -16,6 +20,7 @@
   --color-ember: var(--ember);
   --font-sans: var(--font-open-sans);
   --font-display: var(--fraunces);
+  --font-brand: var(--isometra);
 }
 
 html {

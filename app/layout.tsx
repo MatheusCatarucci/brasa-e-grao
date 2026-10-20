@@ -1,14 +1,27 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import "bootstrap-icons/font/bootstrap-icons.css"
 import Link from "next/link"
 import Image from "next/image"
-import { Open_Sans } from "next/font/google"
+import { Fraunces, Open_Sans } from "next/font/google"
 
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
   display: "swap",
 })
+
+// fonte display (títulos e logo) — variável, com o eixo óptico (opsz)
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  axes: ["opsz"],
+  display: "swap",
+})
+
+// fonte da marca — não existe no catálogo do next/font, então vem do Google via <link>
+const isometraUrl =
+  "https://fonts.googleapis.com/css2?family=Isometra&display=swap"
 
 export const metadata: Metadata = {
   title: "Brasa & Grão",
@@ -21,7 +34,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={openSans.variable}>
+    <html
+      lang="pt-BR"
+      className={`${openSans.variable} ${fraunces.variable}`}
+    >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href={isometraUrl} />
+      </head>
       <body>
         <div>
           <header className="w-full h-25 px-15">
@@ -38,7 +59,7 @@ export default function RootLayout({
                   />
                 </Link>
                 <div className="flex flex-col justify-center">
-                  <h1 className="text-[23px]">Brasa & Grão</h1>
+                  <h1 className="font-display text-[23px]">Brasa & Grão</h1>
                   <p className="text-[10px]">SMASH BURGER % SPECIALTY COFFE</p>
                 </div>
               </div>
@@ -93,7 +114,7 @@ export default function RootLayout({
                   />
                 </Link>
                 <div className="flex flex-col justify-center">
-                  <h1 className="text-[23px]">Brasa & Grão</h1>
+                  <h1 className="font-display text-[23px]">Brasa & Grão</h1>
                   <p className="text-[10px]">RUA DOS PINHEIROS, 480 - SÃO PAULO</p>
                 </div>
               </div>
