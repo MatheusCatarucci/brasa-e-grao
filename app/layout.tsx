@@ -2,6 +2,13 @@ import type { Metadata } from "next"
 import "./globals.css"
 import Link from "next/link"
 import Image from "next/image"
+import { Open_Sans } from "next/font/google"
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Brasa & Grão",
@@ -14,12 +21,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={openSans.variable}>
       <body>
         <div>
           <header className="w-full h-25 px-15">
             <div className="flex items-center justify-between w-full h-full">
-              <div className="flex justify-center bg-red-500">
+              <div className="flex justify-center">
                 <Link href="/">
                   <Image
                     className="mt-3.5"
@@ -36,18 +43,33 @@ export default function RootLayout({
                 </div>
               </div>
 
-              <nav className="inline-flex rounded-full border border-[#e8e1d5] bg-[#f7f2e9] px-6 py-5 gap-10 items-center">
-                <Link href="/" className="bg-white rounded-full px-4 py-2 text-[#e8590c]">Início</Link>
-                <Link href="/cardapio" className="hover:text-[#e8590c]">Cardápio Completo</Link>
+
+              <nav className="inline-flex items-center gap-2 rounded-full border border-[#e8e1d5] bg-[#f7f2e9] p-2">
+                <Link
+                  href="/"
+                  className="rounded-full bg-white px-4 py-2 text-[#e8590c] shadow-[0_2px_6px_rgba(31,26,23,0.06)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(31,26,23,0.14)] active:translate-y-0"
+                >
+                  Início
+                </Link>
+
+                <Link
+                  href="/cardapio"
+                  className="rounded-full px-4 py-2 text-[#51483f] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:text-[#e8590c] hover:shadow-[0_6px_16px_rgba(31,26,23,0.12)] active:translate-y-0"
+                >
+                  Cardápio Completo
+                </Link>
               </nav>
 
-              <div className="bg-red-500 w-80">
-                <div>
-                  <span>Aberto • 25-35 min</span>
+
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2 rounded-full bg-[#DCFCE7] px-3 py-1.5">
+                  <span className="h-2 w-2 rounded-full bg-green-500"></span>
+                  <span className="text-[#166534] font-semibold">Aberto • 25-35 min</span>
                 </div>
 
-                <div>
-                  <span><p>Painel Gestor</p></span>
+                <div className="flex justify-center items-center gap-2 border-2 border-gray-300 px-4 py-1.5 rounded-[10px]">
+                  <span className="h-2 w-2 rounded-full bg-red-600"></span>
+                  <span className="">Painel Gestor</span>
                 </div>
               </div>
             </div>
