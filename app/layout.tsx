@@ -77,12 +77,54 @@ export default function RootLayout({
 
           <main>{children}</main>
 
-          <footer>
-            <div>
-              <p>
-                © 2026 Brasa & Grão Artesanal. Terça a Domingo •
-                18h às 23h30
-              </p>
+          <footer className="flex flex-col w-full h-50 px-15 py-2 bg-black text-white">
+            {/* parte superior do footer */}
+            <div className="flex justify-between items-center">
+              {/* logo com texto */}
+              <div className="flex">
+                <Link href="/">
+                  <Image
+                    className="mt-3.5"
+                    src="/logo_hamburguer.png"
+                    alt="Brasa & Grão"
+                    width={70}
+                    height={70}
+                    priority
+                  />
+                </Link>
+                <div className="flex flex-col justify-center">
+                  <h1 className="text-[23px]">Brasa & Grão</h1>
+                  <p className="text-[10px]">RUA DOS PINHEIROS, 480 - SÃO PAULO</p>
+                </div>
+              </div>
+              {/* links */}
+              <div>
+                <nav className="flex gap-10">
+                  <Link
+                    href="/">
+                    Início
+                  </Link>
+
+                  <Link
+                    href="/cardapio">
+                    Cardápio Completo
+                  </Link>
+
+                  <Link
+                    href="/cardapio">
+                    <p>Área do Gestor (Admin)</p>
+                  </Link>
+                </nav>
+              </div>
+            </div>
+
+            {/* HR */}
+            <div className="w-full h-0.5 rounded-full bg-gray-900"></div>
+
+            {/* parte de baixo do footer */}
+            <div className="flex justify-between items-center h-full">
+              <p className="text-[13px]">© 2026 Brasa & Grão Artesanal. Layout didático para aula de Next.js (Rotas & Layouts).</p>
+              <p className="text-[13px]">Terça a Domingo • 18h às 23h30</p>
             </div>
           </footer>
         </div>
