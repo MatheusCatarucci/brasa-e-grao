@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function HomePage() {
   return (
-    <section className="px-19 bg-[#f9f9f9]">
+    <section className="px-19 pb-25 bg-[#faf7f2]">
       {/* parte 1 - hero */}
       <div className="flex flex-col">
 
@@ -127,7 +127,7 @@ export default function HomePage() {
 
 
       {/* Titulo mais pedidos */}
-      <div className="flex justify-between w-full">
+      <div className="flex justify-between w-full my-4">
         <h1 className="font-display text-[40px] font-bold">Os Mais Pedidos da Semana</h1>
         <button className="w-55 bg-white px-3 rounded-xl border border-[#E7E0D6] font-bold cursor-pointer">
           Ver todos os 16 pratos
@@ -136,50 +136,163 @@ export default function HomePage() {
 
 
       {/* Grid lanches */}
-      <div className="grid grid-cols-3">
+      <div style={{ zoom: 0.85 }}>
+        <div className="grid grid-cols-3 gap-6">
 
-        {/* Item 1 - Grid */}
-        <div className="flex flex-col bg-white rounded-xl overflow-hidden">
+          {/* Item 1 - Grid */}
+          <div className="flex flex-col bg-white rounded-xl overflow-hidden">
 
-          {/* Imagem do lanche */}
-          <Image
-            src="/duplo_brasa_bacon.png"
-            alt="Brasa & Grão"
-            width={1000}
-            height={1}
-            className="w-full h-auto object-cover"
-          />
+            <div className="relative">
+              {/* Imagem do lanche */}
+              <Image
+                src="/duplo_brasa_bacon.png"
+                alt="Brasa & Grão"
+                width={1000}
+                height={1}
+                className="w-full h-auto object-cover"
+              />
 
-          {/* Dados lanche */}
-          <div className="flex flex-col py-7 px-5">
-            <h1 className="font-bold text-[23px]">Duplo Brasa & Bacon</h1>
-            <p className="mt-2 text-[17px]">Dois smash burgers de 90g na brasa, queijo
-              cheddar inglês derretido, fatias de bacony
-              crocante e molho defumado da casa no brioche.</p>
+              <span className="absolute top-3 left-3 bg-[#EA580C] py-1 px-2 text-[12px] text-white rounded-full">
+                MAIS VENDIDOS
+              </span>
 
-            <div className="h-px w-full bg-black rounded-full my-5"></div>
-
-
-            {/* parte de baixo do item */}
-            <div className="flex justify-between">
-              {/* Preço lanche */}
-              <div className="flex flex-col">
-                <span className="text-[#78716C] font-bold">INDIVIDUAL</span>
-                <span className="text-[27px] text-[#EA580C] font-bold">R$38,90</span>
-              </div>
-
-              {/* btn pedir lanche */}
-              <button className="text-white bg-black rounded-xl px-10 py-1 cursor-pointer font-bold text-[16px]">
-                Pedir Agora
-              </button>
+              <span className="absolute bottom-3 right-3 bg-white py-1 px-2 text-[12px] text-white rounded-full">
+                <div className="text-black">
+                  <i className="bi bi-star-fill"></i> 4.9
+                </div>
+              </span>
             </div>
 
+            {/* Dados lanche */}
+            <div className="flex flex-col py-7 px-5">
+              <h1 className="font-bold text-[18px]">Duplo Brasa & Bacon</h1>
+              <p className="mt-2 text-[14px] h-20">Dois smash burgers de 90g na brasa, queijo
+                cheddar inglês derretido, fatias de bacony
+                crocante e molho defumado da casa no brioche.</p>
 
+              <div className="h-px w-full bg-black rounded-full my-5"></div>
+
+              {/* parte de baixo do item */}
+              <div className="flex justify-between items-center">
+                {/* Preço lanche */}
+                <div className="flex flex-col">
+                  <span className="text-[#78716C] font-bold text-[12px]">INDIVIDUAL</span>
+                  <span className="text-[27px] text-[#EA580C] font-bold">R$38,90</span>
+                </div>
+
+                {/* btn pedir lanche */}
+                <button className="text-white bg-black rounded-xl h-10 px-5 cursor-pointer font-bold text-[14px]">
+                  <i className="bi bi-plus-lg"></i> Pedir Agora
+                </button>
+              </div>
+
+            </div>
 
           </div>
+
+
+          {/* Item 2 - Grid */}
+          <div className="flex flex-col bg-white rounded-xl overflow-hidden">
+
+            <div className="relative">
+              {/* Imagem do lanche */}
+              <Image
+                src="/truffle_burger.png"
+                alt="Brasa & Grão"
+                width={1000}
+                height={1}
+                className="w-full h-auto object-cover"
+              />
+
+              <span className="absolute top-3 left-3 bg-black py-1 px-2 text-[12px] text-white rounded-full">
+                CHEF'S CHOICE
+              </span>
+
+              <span className="absolute bottom-3 right-3 bg-white py-1 px-2 text-[12px] text-white rounded-full">
+                <div className="text-black">
+                  <i className="bi bi-star-fill"></i> 5.0
+                </div>
+              </span>
+            </div>
+
+            {/* Dados lanche */}
+            <div className="flex flex-col py-7 px-5">
+              <h1 className="font-bold text-[18px]">Truffle Brie & Cebola</h1>
+              <p className="mt-2 text-[14px] h-20">Hambúrguer alto 180g, queijo brie maçaricado,
+                geleia artesanal de pimenta com bacon, rúcula
+                fresca e maionese trufada no pão australiano.</p>
+
+              <div className="h-px w-full bg-black rounded-full my-5"></div>
+
+              {/* parte de baixo do item */}
+              <div className="flex justify-between items-center">
+                {/* Preço lanche */}
+                <div className="flex flex-col">
+                  <span className="text-[#78716C] font-bold text-[12px]">INDIVIDUAL</span>
+                  <span className="text-[27px] text-[#EA580C] font-bold">R$44,90</span>
+                </div>
+
+                {/* btn pedir lanche */}
+                <button className="text-white bg-black rounded-xl h-10 px-5 cursor-pointer font-bold text-[14px]">
+                  <i className="bi bi-plus-lg"></i> Pedir Agora
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+
+          {/* Item 3 - Grid */}
+          <div className="flex flex-col bg-white rounded-xl overflow-hidden">
+
+            <div className="relative">
+              {/* Imagem do lanche */}
+              <Image
+                src="/crispy_honey.png"
+                alt="Brasa & Grão"
+                width={1000}
+                height={1}
+                className="w-full h-auto object-cover"
+              />
+
+              <span className="absolute top-3 left-3 bg-black py-1 px-2 text-[12px] text-white rounded-full">
+                NOVO
+              </span>
+
+              <span className="absolute bottom-3 right-3 bg-white py-1 px-2 text-[12px] text-white rounded-full">
+                <div className="text-black">
+                  <i className="bi bi-star-fill"></i> 4.8
+                </div>
+              </span>
+            </div>
+
+            {/* Dados lanche */}
+            <div className="flex flex-col py-7 px-5">
+              <h1 className="font-bold text-[18px]">Crispy Chicken Hot Honey</h1>
+              <p className="mt-2 text-[14px] h-20">Sobrecoxa de frango empanada super crocante,
+                mel picante artesanal, picles da casa, salada
+                coleslaw cremosa e pão de batata.</p>
+
+              <div className="h-px w-full bg-black rounded-full my-5"></div>
+
+              {/* parte de baixo do item */}
+              <div className="flex justify-between items-center">
+                {/* Preço lanche */}
+                <div className="flex flex-col">
+                  <span className="text-[#78716C] font-bold text-[12px]">INDIVIDUAL</span>
+                  <span className="text-[27px] text-[#EA580C] font-bold">R$34,90</span>
+                </div>
+
+                {/* btn pedir lanche */}
+                <button className="text-white bg-black rounded-xl h-10 px-5 cursor-pointer font-bold text-[14px]">
+                  <i className="bi bi-plus-lg"></i> Pedir Agora
+                </button>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-
-
       </div>
 
 
